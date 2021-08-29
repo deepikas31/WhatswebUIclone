@@ -85,6 +85,9 @@ function Chats() {
         <Sender>
           <span class="receiver-message">Sure</span>
           <span class="message-time">7:50</span>
+          <span class="message-status">
+            <img src="./images/double-check-seen.svg" alt="" />
+          </span>
         </Sender>
         <Receiver>
           <span class="receiver-message">Great!</span>
@@ -156,6 +159,11 @@ const ChatHeader = styled.div`
   justify-content: space-between;
   height: 45px;
   padding: 10px 32px;
+  /* top: 0;
+  position: fixed;
+  z-index: 1;
+  left: 40rem;
+  box-sizing: border-box; */
 `;
 // Header
 const ChatHeaderLeft = styled.div`
@@ -260,11 +268,20 @@ const Receiver = styled.div`
 
 /* FOOTER */
 
-const ChatFooter = styled.div``;
+const ChatFooter = styled.div`
+    position: fixed;
+    width: 65%;
+    bottom:0;
+    display:flex;
+    justify-content: space-between;
+    @media(max-width:768px){
+      width:95%;
+    }
+`;
 const MessageBar = styled.div`
   position: absolute;
   bottom: 0;
-  width: 100%;
+  width: 95%;
   display: flex;
   background: #f0f0f0;
   padding: 1rem 2rem;
@@ -273,6 +290,16 @@ const MessageBar = styled.div`
   img {
     cursor: pointer;
   }
+  /* @media (max-width: 1124px) {
+    bottom:--5px;
+  }
+  @media (max-width: 668px) {
+   bottom:-60px;
+  }
+  @media (max-width: 500px) {
+   bottom:-95px;
+   width:50%;
+  } */
 `;
 const MessageBarLeft = styled.div`
   img:nth-of-type(2) {
@@ -282,7 +309,7 @@ const MessageBarLeft = styled.div`
 const MessageBarCenter = styled.div`
   flex: 1;
   input {
-    width: 95%;
+    width: 90%;
     outline: none;
     border: none;
     padding: 1rem 1rem 1rem 1rem;
@@ -296,9 +323,13 @@ const MessageBarCenter = styled.div`
   }
 `;
 const MessageBarRight = styled.div`
-  margin-right: 500px;
+  /* margin-right: 500px; */
+  margin-right:1rem;
   @media (max-width: 768px) {
-    margin: 0 50px 0 20px;
+    margin: 0 20px 0 20px;
   }
+  /* @media (max-width: 1124) {
+    margin-left:25px;
+  } */
 `;
 export default Chats;

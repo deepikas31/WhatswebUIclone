@@ -1,12 +1,18 @@
 // import logo from './logo.svg';
 import "./App.css";
 import Body from "./Components/Body";
+import styled from "styled-components"
 function App() {
   return (
-    <div>
+    <TotalBody>
       <Body />
-    </div>
+    </TotalBody>
   );
 }
+
+const TotalBody = styled.div`
+  overflow: hidden;
+  height:100%;
+`;
 
 export default App;
